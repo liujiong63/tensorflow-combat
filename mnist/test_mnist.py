@@ -19,16 +19,17 @@ def main():
         cross_entropy)
     init = tf.initialize_all_variables()
     sess = tf.Session()
-    sess.run(init)
+    print(sess.run(init))
 
     for i in range(1000):
-      batch_xs, batch_ys = mnist.train.next_batch(100)
-      sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})
+        batch_xs, batch_ys = mnist.train.next_batch(100)
+        print(sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys}))
 
     # Test and predict
     correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
     accuracy = tf.reduce_mean(tf.cast(correct_prediction, "float"))
-    sess.run(accuracy, feed_dict={x: mnist.test.images, y_: mnist.test.labels})
+    print(sess.run(accuracy,
+                   feed_dict={x: mnist.test.images, y_: mnist.test.labels}))
 
 
 if __name__ == '__main__':
