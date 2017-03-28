@@ -19,11 +19,11 @@ def main():
         cross_entropy)
     init = tf.initialize_all_variables()
     sess = tf.Session()
-    print(sess.run(init))
+    sess.run(init)
 
     for i in range(1000):
         batch_xs, batch_ys = mnist.train.next_batch(100)
-        print(sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys}))
+        sess.run(train_step, feed_dict={x: batch_xs, y_: batch_ys})
 
     # Test and predict
     correct_prediction = tf.equal(tf.argmax(y, 1), tf.argmax(y_, 1))
