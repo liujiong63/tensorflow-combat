@@ -2,4 +2,4 @@
 [![CircleCI](https://circleci.com/gh/liujiong63/tensorflow-demos.svg?style=svg)](https://circleci.com/gh/liujiong63/tensorflow-demos)
 
 # Achieved
-- add mnist test model
+- add mnist model and test demos
